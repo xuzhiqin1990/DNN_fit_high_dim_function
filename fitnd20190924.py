@@ -278,7 +278,9 @@ with tf.variable_scope('Graph',reuse=tf.AUTO_REUSE) as scope:
     adam = tf.compat.v1.train.AdamOptimizer(learning_rate=in_learning_rate)
     train_op = adam.minimize(loss)
 
-sess=tf.Session()
+config = tf.ConfigProto()
+config.gpu_options.allow_growth=True  
+sess = tf.Session(config=config)
 sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()  
         
