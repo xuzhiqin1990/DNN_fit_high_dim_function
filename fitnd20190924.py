@@ -63,6 +63,9 @@ mkdir(BaseDir)
 mkdir(FolderName)
 mkdir('%smodel/'%(FolderName))
 R_variable['FolderName']=FolderName 
+if  not platform.system()=='Windows':
+    shutil.copy(__file__,'%s%s'%(FolderName,os.path.basename(__file__)))
+    
 R_variable['input_dim']=2
 R_variable['epsion']=0.1
 def get_y_func(xs):
