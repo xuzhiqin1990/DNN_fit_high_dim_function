@@ -13,6 +13,7 @@ import shutil
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt   
+import platform
 #from BasicFunc import mySaveFig, mkdir
 
 from mpl_toolkits.mplot3d import Axes3D 
